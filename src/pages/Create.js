@@ -1,7 +1,6 @@
 import {
 	Button,
 	Container,
-	Input,
 	Typography,
 	TextField,
 	FormControl,
@@ -17,15 +16,16 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 // ! makeStyle hooks
-// const useStyles = makeStyles({
-// 	btn: {
-// 		backgroundColor: "red",
-// 		fontSize: 50,
-// 	},
-// });
+const useStyles = makeStyles({
+	btn: {
+		backgroundColor: "red",
+		fontSize: 50,
+	},
+});
 
 export default function Notes() {
-	// const classes = useStyles();
+	const classes = useStyles();
+
 	const [title, setTitle] = useState("");
 	const [detail, setDetail] = useState("");
 	const [radio, setRadio] = useState("work");
@@ -39,10 +39,10 @@ export default function Notes() {
 		setTitleError(false);
 		setDetailError(false);
 
-		if (title == "") {
+		if (title === "") {
 			setTitleError(true);
 		}
-		if (detail == "") {
+		if (detail === "") {
 			setDetailError(true);
 		}
 

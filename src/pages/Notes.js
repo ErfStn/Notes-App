@@ -1,4 +1,4 @@
-import { Container, Grid, Paper } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -26,7 +26,7 @@ export default function Create() {
 		<Container>
 			<Grid container spacing={2}>
 				{notes.map(note => (
-					<Grid item xs={12} sm={6} md={4}>
+					<Grid item xs={12} sm={6} md={4} key={note.id}>
 						<NoteCart note={note} handleDelete={handleDelete} />
 					</Grid>
 				))}
