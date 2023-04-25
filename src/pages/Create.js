@@ -28,7 +28,7 @@ export default function Notes() {
 
 	const [title, setTitle] = useState("");
 	const [detail, setDetail] = useState("");
-	const [radio, setRadio] = useState("work");
+	const [category, setCategory] = useState("work");
 	const [titleError, setTitleError] = useState(false);
 	const [detailError, setDetailError] = useState(false);
 
@@ -50,7 +50,7 @@ export default function Notes() {
 			fetch("http://localhost:3001/notes", {
 				method: "POST",
 				headers: { "Content-type": "application/json" },
-				body: JSON.stringify({ title, detail, radio }),
+				body: JSON.stringify({ title, detail, category }),
 			}).then(() => history.push("/"));
 		}
 	};
@@ -58,7 +58,7 @@ export default function Notes() {
 	return (
 		<Container>
 			<form noValidate autoComplete="off" onSubmit={handleSubmit}>
-				<Typography variant="h4" color="primary" marginTop={2} gutterBottom>
+				<Typography variant="h4" color="primary" gutterBottom>
 					Form
 				</Typography>
 				<TextField
@@ -91,17 +91,17 @@ export default function Notes() {
 					<FormLabel id="radio-group-label">Category</FormLabel>
 					<RadioGroup
 						aria-labelledby="radio-group-label"
-						value={radio}
+						value={category}
 						onChange={e => {
-							setRadio(e.target.value);
+							setCategory(e.target.value);
 						}}
 					>
 						<FormControlLabel label="Work" value="work" control={<Radio />} />
 						<FormControlLabel label="Todo" value="todo" control={<Radio />} />
 						<FormControlLabel label="Money" value="money" control={<Radio />} />
 						<FormControlLabel
-							label="Urgent"
-							value="urgent"
+							label="Reminder"
+							value="reminder"
 							control={<Radio />}
 						/>
 					</RadioGroup>

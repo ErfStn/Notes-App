@@ -1,56 +1,74 @@
 {
-	"posts": [
-		{
-			"id": 1,
-			"title": "json-server 1",
-			"author": "typicode"
-		},
-		{
-			"id": 2,
-			"title": "json-server 2",
-			"author": "typicode"
-		},
-		{
-			"id": 3,
-			"title": "json-server 3",
-			"author": "typicode"
-		},
-		{
-			"id": 4,
-			"title": "json-server 4",
-			"author": "typicode"
-		}
-	],
-	"notes": [
-		{
-			"id": 1,
-			"title": "some comment",
-			"detail": "helloooo",
-			"category": "work"
-		},
-		{
-			"title": "Playing guitar",
-			"detail": "TLOU",
-			"category": "todo",
-			"id": 3
-		},
-		{
-			"title": "Complete Resume",
-			"detail": "For job",
-			"radio": "urgent",
-			"id": 4
-		},
-		{
-			"title": "Deploy project",
-			"detail": "Material ui project ",
-			"radio": "work",
-			"id": 5
-		},
-		{
-			"title": "search for a new job",
-			"detail": "Job vision site",
-			"radio": "work",
-			"id": 6
-		}
-	]
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server 1",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "json-server 2",
+      "author": "typicode"
+    },
+    {
+      "id": 3,
+      "title": "json-server 3",
+      "author": "typicode"
+    },
+    {
+      "id": 4,
+      "title": "json-server 4",
+      "author": "typicode"
+    }
+  ],
+  "notes": [
+    {
+      "title": "Playing guitar",
+      "detail": "TLOU",
+      "category": "todo",
+      "id": 3
+    },
+    {
+      "title": "Deploy project",
+      "detail": "Material ui project ",
+      "category": "work",
+      "id": 5
+    },
+    {
+      "title": "Pay snapp",
+      "detail": "credit",
+      "category": "money",
+      "id": 7
+    },
+    {
+      "title": "Learning MUI",
+      "detail": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+      "category": "todo",
+      "id": 8
+    },
+    {
+      "title": "Reading Book",
+      "detail": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+      "category": "reminder",
+      "id": 9
+    },
+    {
+      "title": "Complete Resume",
+      "detail": "For job",
+      "category": "work",
+      "id": 10
+    },
+    {
+      "title": "Research about Next.js",
+      "detail": "how to learn it ...",
+      "category": "work",
+      "id": 11
+    },
+    {
+      "title": "Buying gift for my friend",
+      "detail": "go to the malls",
+      "category": "todo",
+      "id": 12
+    }
+  ]
 }

@@ -1,6 +1,7 @@
 import { AddCircleOutlineOutlined, SubjectOutlined } from "@mui/icons-material";
 import {
 	AppBar,
+	Avatar,
 	Drawer,
 	List,
 	ListItem,
@@ -9,13 +10,13 @@ import {
 	Toolbar,
 	Typography,
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import { format } from "date-fns";
 import React from "react";
 import {
 	useHistory,
 	useLocation,
 } from "react-router-dom/cjs/react-router-dom.min";
+import { makeStyles } from "@mui/styles";
 
 const drawerWidth = 240;
 
@@ -25,6 +26,7 @@ const useStyle = makeStyles(theme => {
 			background: "#f9f9f9",
 			width: "100%",
 			height: "100vh",
+			marginTop: "1rem",
 		},
 		root: {
 			display: "flex",
@@ -45,14 +47,19 @@ const menuItems = [
 	},
 ];
 
-export default function Layout({ children }) {
+export default function Layout({ children, props }) {
 	const location = useLocation();
 	const history = useHistory();
 	const classes = useStyle();
+
 	return (
 		<div className={classes.root}>
 			{/* app bar */}
-			<AppBar sx={{ width: `calc(100% - ${drawerWidth}px)`, mb: 8 }}>
+			<AppBar
+				elevation={0}
+				position="fixed"
+				sx={{ width: `calc(100% - ${drawerWidth}px)`, mb: 8 }}
+			>
 				<Toolbar>
 					<Typography
 						sx={{
@@ -62,6 +69,7 @@ export default function Layout({ children }) {
 						Today is the {format(new Date(), "do MMMM Y")}
 					</Typography>
 					<Typography>Login</Typography>
+					<Avatar src="./reactLogo.png" sx={{ ml: 2 }} />
 				</Toolbar>
 			</AppBar>
 			{/* side drawer */}
@@ -77,12 +85,10 @@ export default function Layout({ children }) {
 					},
 				}}
 			>
-				<div>
-					<Typography variant="h5">Deko</Typography>
-				</div>
-
+				<Typography variant="h5" sx={{ ml: 2, mt: 2 }}>
+					Midoria
+				</Typography>
 				{/* List item */}
-
 				<List>
 					{menuItems.map(item => (
 						<ListItem
