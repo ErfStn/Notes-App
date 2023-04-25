@@ -1,13 +1,16 @@
 import { AddCircleOutlineOutlined, SubjectOutlined } from "@mui/icons-material";
 import {
+	AppBar,
 	Drawer,
 	List,
 	ListItem,
 	ListItemIcon,
 	ListItemText,
+	Toolbar,
 	Typography,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { format } from "date-fns";
 import React from "react";
 import {
 	useHistory,
@@ -16,22 +19,18 @@ import {
 
 const drawerWidth = 240;
 
-const useStyle = makeStyles({
-	page: {
-		background: "#f9f9f9",
-		width: "100%",
-		height: "100vh",
-	},
-	drawer: {
-		width: drawerWidth,
-		background: "#ccc",
-	},
-	root: {
-		display: "flex",
-	},
-	active: {
-		background: "#ccc",
-	},
+const useStyle = makeStyles(theme => {
+	return {
+		page: {
+			background: "#f9f9f9",
+			width: "100%",
+			height: "100vh",
+		},
+		root: {
+			display: "flex",
+		},
+		toolbar: theme.mixins.toolbar,
+	};
 });
 const menuItems = [
 	{
@@ -53,6 +52,18 @@ export default function Layout({ children }) {
 	return (
 		<div className={classes.root}>
 			{/* app bar */}
+			<AppBar sx={{ width: `calc(100% - ${drawerWidth}px)`, mb: 8 }}>
+				<Toolbar>
+					<Typography
+						sx={{
+							flexGrow: 1,
+						}}
+					>
+						Today is the {format(new Date(), "do MMMM Y")}
+					</Typography>
+					<Typography>Login</Typography>
+				</Toolbar>
+			</AppBar>
 			{/* side drawer */}
 			<Drawer
 				variant="permanent"
@@ -90,7 +101,10 @@ export default function Layout({ children }) {
 					))}
 				</List>
 			</Drawer>
-			<div className={classes.page}>{children}</div>
+			<div className={classes.page}>
+				<div className={classes.toolbar}></div>
+				{children}
+			</div>
 		</div>
 	);
 }

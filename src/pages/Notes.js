@@ -24,7 +24,7 @@ export default function Create() {
 
 	return (
 		<Container>
-			<Grid container spacing={2}>
+			<Grid container spacing={2} sx={{ mt: 2 }}>
 				{notes.map(note => (
 					<Grid item xs={12} sm={6} md={4} key={note.id}>
 						<NoteCart note={note} handleDelete={handleDelete} />
