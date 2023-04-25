@@ -30,18 +30,16 @@ export default function Create() {
 	};
 
 	return (
-		<Container>
-			<Masonry
-				breakpointCols={breakpointColumnsObj}
-				className="my-masonry-grid"
-				columnClassName="my-masonry-grid_column"
-			>
-				{notes.map(note => (
-					<div xs={12} sm={6} md={4} key={note.id}>
-						<NoteCart note={note} handleDelete={handleDelete} />
-					</div>
-				))}
-			</Masonry>
-		</Container>
+		<Masonry
+			breakpointCols={breakpointColumnsObj}
+			className="my-masonry-grid"
+			columnClassName="my-masonry-grid_column"
+		>
+			{notes.map(note => (
+				<div xs={12} sm={6} md={4} key={note.id}>
+					<NoteCart note={note} handleDelete={handleDelete} />
+				</div>
+			))}
+		</Masonry>
 	);
 }

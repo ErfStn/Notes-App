@@ -56,65 +56,63 @@ export default function Notes() {
 	};
 
 	return (
-		<Container>
-			<form noValidate autoComplete="off" onSubmit={handleSubmit}>
-				<Typography variant="h4" color="primary" gutterBottom>
-					Form
-				</Typography>
-				<TextField
-					id="1"
-					label="Title"
-					value={title}
-					fullWidth
-					required
-					margin="normal"
-					error={titleError}
+		<form noValidate autoComplete="off" onSubmit={handleSubmit}>
+			<Typography variant="h4" color="primary" gutterBottom>
+				Form
+			</Typography>
+			<TextField
+				id="1"
+				label="Title"
+				value={title}
+				fullWidth
+				required
+				margin="normal"
+				error={titleError}
+				onChange={e => {
+					setTitle(e.target.value);
+				}}
+			/>
+			<TextField
+				id="2"
+				label="Detail"
+				value={detail}
+				fullWidth
+				required
+				margin="normal"
+				error={detailError}
+				multiline
+				rows={4}
+				onChange={e => {
+					setDetail(e.target.value);
+				}}
+			/>
+			<FormControl fullWidth margin="normal">
+				<FormLabel id="radio-group-label">Category</FormLabel>
+				<RadioGroup
+					aria-labelledby="radio-group-label"
+					value={category}
 					onChange={e => {
-						setTitle(e.target.value);
+						setCategory(e.target.value);
 					}}
-				/>
-				<TextField
-					id="2"
-					label="Detail"
-					value={detail}
-					fullWidth
-					required
-					margin="normal"
-					error={detailError}
-					multiline
-					rows={4}
-					onChange={e => {
-						setDetail(e.target.value);
-					}}
-				/>
-				<FormControl fullWidth margin="normal">
-					<FormLabel id="radio-group-label">Category</FormLabel>
-					<RadioGroup
-						aria-labelledby="radio-group-label"
-						value={category}
-						onChange={e => {
-							setCategory(e.target.value);
-						}}
-					>
-						<FormControlLabel label="Work" value="work" control={<Radio />} />
-						<FormControlLabel label="Todo" value="todo" control={<Radio />} />
-						<FormControlLabel label="Money" value="money" control={<Radio />} />
-						<FormControlLabel
-							label="Reminder"
-							value="reminder"
-							control={<Radio />}
-						/>
-					</RadioGroup>
-				</FormControl>
-				<Button
-					type="submit"
-					variant="contained"
-					color="primary"
-					endIcon={<KeyboardArrowRightIcon />}
 				>
-					Submit
-				</Button>
-			</form>
-		</Container>
+					<FormControlLabel label="Work" value="work" control={<Radio />} />
+					<FormControlLabel label="Todo" value="todo" control={<Radio />} />
+					<FormControlLabel label="Money" value="money" control={<Radio />} />
+					<FormControlLabel
+						label="Reminder"
+						value="reminder"
+						control={<Radio />}
+					/>
+				</RadioGroup>
+			</FormControl>
+			<Button
+				type="submit"
+				variant="contained"
+				color="primary"
+				endIcon={<KeyboardArrowRightIcon />}
+			>
+				Submit
+			</Button>
+		</form>
 	);
 }
